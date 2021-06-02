@@ -62,10 +62,7 @@ function game(){
         case -1:
             computerPoints++;
     }
-   
-
-
-    } 
+   } 
     if (computerPoints === 5) winner = "Computer";
     if (playerPoints === 5) winner = "Player";
     console.log("The winner is " + winner);
