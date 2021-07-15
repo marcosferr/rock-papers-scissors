@@ -47,7 +47,7 @@ function playRound(  playerSelection, computerSelection){
     
 
 }
-function game(){
+/*function game(){
 
 
     let computerPoints = 0;
@@ -66,4 +66,12 @@ function game(){
     if (computerPoints === 5) winner = "Computer";
     if (playerPoints === 5) winner = "Player";
     console.log("The winner is " + winner);
-}
+}*/
+const btnPaper = document.querySelector("#paper");
+const btnRock = document.querySelector("#rock");
+const btnScissors = document.querySelector("#scissors");
+
+btnPaper.addEventListener('click',()=>{playRound('paper',computerPlay())});
+btnRock.addEventListener('click',()=>{playRound('rock',computerPlay())});
+btnScissors.addEventListener('click',()=>{playRound('scissors',computerPlay())});
+
