@@ -16,13 +16,14 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
 
     if ((playerSelection === computerSelection)) {
-        divDisplay.innerHTML = "It's a tie";
+        resultDisplay.innerHTML = "It's a tie";
+        
     }
     if ((playerSelection === "rock" && computerSelection === "paper")||
     (playerSelection === "paper" && computerSelection === "scissors")
     || (playerSelection === "scissors" && computerSelection === "rock") ) {
         
-        divDisplay.innerHTML = "Computer wins";
+        resultDisplay.innerHTML = "Computer wins";
         computerPoints+=1;
         
     }
@@ -30,27 +31,35 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "rock")||
     playerSelection === "scissors" && computerSelection === "paper") {
 
-        divDisplay.innerHTML = "Player wins";
+        resultDisplay.innerHTML = "Player wins";
         playerPoints+=1;
         
     }
+     
+updateDisplay();
+}
+
+function updateDisplay(){
+
     if(playerPoints>=5){
-        divDisplay.innerHTML = "Player Wins Game Restarted";
+        mainDisplay.innerHTML = "Player Wins Game Restarted";
         computerPoints=0;
         playerPoints=0;
+        computerDisplay.innerHTML=0;
+        playerDisplay.innerHTML=0;
     }
     if(computerPoints>=5){
-        divDisplay.innerHTML = "computer Wins Game Restarted";
+        mainDisplay.innerHTML = "computer Wins Game Restarted";
         playerPoints=0;
         computerPoints=0;
+        computerDisplay.innerHTML=0;
+        playerDisplay.innerHTML=0;
     }
+    
     else{
-        divDisplay.innerHTML += `Current Score. Computer = ${computerPoints} Player = ${playerPoints}`;
+        computerDisplay.innerHTML=computerPoints;
+        playerDisplay.innerHTML=playerPoints;
     }
-     
-
-
-
 }
 /*function game(){
 
@@ -74,8 +83,25 @@ function playRound(playerSelection, computerSelection) {
 const btnPaper = document.querySelector("#paper");
 const btnRock = document.querySelector("#rock");
 const btnScissors = document.querySelector("#scissors");
-const divDisplay = document.querySelector("#display");
+const mainDisplay = document.querySelector("#main-display");
+const resultDisplay = document.querySelector("#result-display");
+const computerDisplay = document.querySelector("#computer-display");
+const playerDisplay = document.querySelector("#player-display");
+const selectionPlayer = document.querySelector('#player-selection')
+const computerPlayer = document.querySelector('#computer-selection')
 
+// Create rockImg element
+const rockImg = document.createElement('img');
+rockImg.src = 'img/rock.png';
+rockImg.alt = 'Rock';
+
+const paperImg = document.createElement('img');
+paperImg.src = 'img/paper.png';
+paperImg.alt = 'Paper';
+
+const scissorsImg = document.createElement('img');
+scissorsImg.src = 'img/scissors.png';
+scissorsImg.alt = 'Scissors';
 
 btnPaper.addEventListener('click', () => { playRound('paper', computerPlay()) });
 btnRock.addEventListener('click', () => { playRound('rock', computerPlay()) });
