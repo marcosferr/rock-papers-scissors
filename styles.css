@@ -1,5 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+header{
+    font-family: 'Press Start 2P', cursive;
+font-size: 48px;
+background-color: #111720;
+color: #fac650;
+height: 150px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 body{
-    background-color: #0FA0FE;
+    background-color: #222831;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 .container, .btn-container{
     display: flex;
@@ -7,18 +69,32 @@ body{
 .container{
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100vh;
+    color: aliceblue;
+    font-size: 2rem;
 }
 .btn-containers{
     flex-direction: row ;
-    background-color: #0EE696;
+    background-color:#393e46;
     
     justify-content: space-around;
     padding: 30px;
 }
+footer{color: aliceblue;
+font-size: 32px;
+text-align: center;}
 button{
-    background-color: #E6DA0E;
+    background-color:#393e46;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+
+   
+}
+.selection img{
+    width: 100px;
+    height: 100px;
 }
 img{
     height: 300px;
@@ -27,4 +103,24 @@ img{
 #display{
     font-size: 42px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.result{
+    display: flex;
+    flex-direction: row;
+}
+#result-display {
+    margin-bottom: 30px;
+}
+
+.info-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
 }
